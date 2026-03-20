@@ -40,28 +40,28 @@ export default function ProposalCard({
           </div>
         )}
 
-        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight drop-shadow-sm">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight drop-shadow-sm break-words leading-snug">
           {proposal.venue_name}
         </h3>
 
-        <div className="flex flex-wrap gap-3 mb-8">
-          <div className="flex items-center text-sm font-medium text-blue-200 bg-blue-500/10 px-3.5 py-1.5 rounded-full border border-blue-500/20 backdrop-blur-md">
-            <MapPin className="w-4 h-4 mr-2" />
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+          <div className="flex items-center text-xs sm:text-sm font-medium text-blue-200 bg-blue-500/10 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full border border-blue-500/20 backdrop-blur-md">
+            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
             {proposal.location}
           </div>
-          <div className="flex items-center text-sm font-medium text-emerald-200 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 backdrop-blur-md">
-            <DollarSign className="w-4 h-4 mr-1.5" />
+          <div className="flex items-center text-xs sm:text-sm font-medium text-emerald-200 bg-emerald-500/10 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full border border-emerald-500/20 backdrop-blur-md">
+            <DollarSign className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" />
             {proposal.estimated_cost}
           </div>
         </div>
 
-        <div className="bg-[#1e293b]/50 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+        <div className="bg-[#1e293b]/50 rounded-xl p-4 sm:p-5 border border-white/5 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 pointer-events-none"></div>
-          <h4 className="flex items-center text-sm font-semibold text-purple-300 mb-3 uppercase tracking-wider">
-            <CheckCircle2 className="w-4 h-4 mr-2" />
+          <h4 className="flex items-center text-xs sm:text-sm font-semibold text-purple-300 mb-2 sm:mb-3 uppercase tracking-wider">
+            <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 shrink-0" />
             Why it fits perfectly
           </h4>
-          <p className="text-slate-300 text-sm leading-relaxed relative z-10">
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed relative z-10 break-words">
             {proposal.justification}
           </p>
         </div>

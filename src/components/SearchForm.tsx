@@ -43,20 +43,20 @@ export default function SearchForm() {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="relative group mb-12">
-        <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-full blur-md opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-300"></div>
-        <div className="relative flex flex-col sm:flex-row items-center bg-[#0f172a]/90 backdrop-blur-xl rounded-full overflow-hidden border border-white/10 shadow-2xl focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/50 transition-all p-1.5 pl-6 gap-2">
+        <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-3xl sm:rounded-full blur-md opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-300"></div>
+        <div className="relative flex flex-col sm:flex-row items-center bg-[#0f172a]/90 backdrop-blur-xl rounded-3xl sm:rounded-full overflow-hidden border border-white/10 shadow-2xl focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/50 transition-all p-2 sm:p-1.5 sm:pl-6 gap-3 sm:gap-2">
           <input
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="e.g., 50-person retreat in Miami for 3 days under $10k"
-            className="flex-1 w-full bg-transparent text-white py-4 text-sm sm:text-base focus:outline-none placeholder-slate-400 font-light"
+            className="flex-1 w-full bg-transparent text-white py-3 sm:py-4 px-4 sm:px-0 text-sm sm:text-base focus:outline-none placeholder-slate-400 font-light text-center sm:text-left"
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={isLoading || !prompt.trim()}
-            className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-full font-semibold transition-all shadow-lg active:scale-95 disabled:opacity-50 disabled:active:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
+            className="w-full sm:w-auto px-8 py-4 sm:py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-2xl sm:rounded-full font-semibold transition-all shadow-lg active:scale-95 disabled:opacity-50 disabled:active:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
           >
             {isLoading ? (
               <>
@@ -74,8 +74,8 @@ export default function SearchForm() {
       </form>
 
       {error && (
-        <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-200 rounded-xl mb-12 backdrop-blur-sm shadow-xl flex items-center mx-auto max-w-2xl">
-          <span className="bg-red-500/20 p-1.5 rounded-full mr-3"><Loader2 className="w-4 h-4 text-red-400 rotate-45" /></span>
+        <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-200 rounded-xl mb-12 backdrop-blur-sm shadow-xl flex items-center mx-auto max-w-2xl break-words text-sm sm:text-base">
+          <span className="bg-red-500/20 p-1.5 rounded-full mr-3 shrink-0"><Loader2 className="w-4 h-4 text-red-400 rotate-45" /></span>
           {error}
         </div>
       )}
@@ -84,7 +84,7 @@ export default function SearchForm() {
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out mt-8">
           <div className="flex items-center justify-center gap-3 mb-8 px-4">
             <div className="h-px bg-gradient-to-r from-transparent to-blue-500/50 flex-1"></div>
-            <h3 className="text-sm sm:text-lg font-medium text-blue-300 uppercase tracking-widest text-center">Analysis Complete</h3>
+            <h3 className="text-xs sm:text-lg font-medium text-blue-300 uppercase tracking-widest text-center whitespace-nowrap">Analysis Complete</h3>
             <div className="h-px bg-gradient-to-l from-transparent to-blue-500/50 flex-1"></div>
           </div>
           <ProposalCard proposal={proposal} isNew />
